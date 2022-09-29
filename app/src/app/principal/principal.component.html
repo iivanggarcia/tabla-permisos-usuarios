@@ -1,6 +1,6 @@
 <div *ngIf="banderaMostrar" fxLayout="column" fxLayoutAlign="space-around center" >
-    <app-nuevo-usuario *ngIf="mostrarFormularioUsuario"></app-nuevo-usuario>
-    <div fxLayout = "row">
+    <app-nuevo-usuario *ngIf="mostrarFormularioUsuario" (onNuevoUsuario)="agregarNuevoUsuario($event)"></app-nuevo-usuario>
+    <div fxLayout = "row" *ngIf = "usuario.usuario2">
         <button *ngIf = "!mostrarFormularioUsuario" mat-raised-button color="primary" (click)="abrirFormularioUsuario()">Agregar usuario</button>
     </div>
     <app-tabla [permisos]="usuario" fxFlexAlign="center center"></app-tabla>

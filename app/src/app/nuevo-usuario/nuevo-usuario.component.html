@@ -1,24 +1,27 @@
-<form [formGroup] = "formularioUsuario">
+<form [formGroup] = "formularioUsuario" (ngSubmit)="generarUsuario()">
     <div fxLayout="column" fxLayoutGap="10px">
         <fieldset>
             <legend>Datos personales</legend>
-            <div fxLayout = "row" fxLayoutGap="10px">
-                <app-input [controlador]="'nombre'" [init]="getConfiguracionInput('Nombre','','text', true)" formControlName="nombre"></app-input>
-                <app-input [controlador]="'username'" [init]="getConfiguracionInput('Username','','text', true)" formControlName="username"></app-input>
-                <app-input [controlador]="'email'" [init]="getConfiguracionInput('Email','algo@gmail.com','email', true)" formControlName="email"></app-input>
-                <app-input [controlador]="'telefono'" [init]="getConfiguracionInput('Phone','','tel', true)" formControlName="telefono"></app-input>
-                <app-input [controlador]="'sitioWeb'" [init]="getConfiguracionInput('Sitio web','','text', false)" formControlName="sitioWeb"></app-input>
+            <div fxLayout = "row" fxLayoutGap="10px" fxLayout.lt-lg="row wrap">
+                <app-input  fxFlex="20" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'nombre'" [init]="getConfiguracionInput('Nombre','','text', true)" formControlName="nombre"></app-input>
+                <app-input  fxFlex="20" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'username'" [init]="getConfiguracionInput('Username','','text', true)" formControlName="username"></app-input>
+                <app-input  fxFlex="20" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'email'" [init]="getConfiguracionInput('Email','algo@gmail.com','email', true)" formControlName="email"></app-input>
+                <app-input  fxFlex="20" fxFlex.sm="auto" fxFlex.xs="auto"[controlador]="'telefono'" [init]="getConfiguracionInput('Phone','','tel', true)" formControlName="telefono"></app-input>
+                <app-input  fxFlex="20" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'sitioWeb'" [init]="getConfiguracionInput('Sitio web','','text', false)" formControlName="sitioWeb"></app-input>
             </div>
         </fieldset>
         <fieldset>
             <legend>Datos de localización</legend>
-            <div fxLayout = "row">
-
+            <div fxLayout = "row" fxLayoutGap="10px" fxLayout.lt-lg="row wrap">
+                <app-input fxFlex="25" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'calle'" [init]="getConfiguracionInput('Calle','','text', true)" formControlName="calle"></app-input>
+                <app-input fxFlex="25" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'suite'" [init]="getConfiguracionInput('Suite','','text', true)" formControlName="suite"></app-input>
+                <app-input fxFlex="25" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'ciudad'" [init]="getConfiguracionInput('Ciudad','','text', true)" formControlName="ciudad"></app-input>
+                <app-input fxFlex="25" fxFlex.sm="auto" fxFlex.xs="auto" [controlador]="'codigoPostal'" [init]="getConfiguracionInput('Código postal','','string', true)" formControlName="codigoPostal"></app-input>
             </div>
         </fieldset>
         <div>
-            <button mat-raised-button color="primary">Guardar</button>
-            <button mat-raised-button color="warn">Cancelar</button>
+            <button mat-raised-button color="primary" type="submit">Guardar</button>
+            <button mat-raised-button color="warn" type="button" (click)="cancelarRegistro()">Cancelar</button>
         </div>
     </div>
 </form>

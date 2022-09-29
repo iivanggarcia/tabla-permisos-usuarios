@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormInput } from '../interfaces/formInput';
+import { Usuario } from '../interfaces/Usuario';
 
 @Component({
   selector: 'app-nuevo-usuario',
@@ -10,6 +11,8 @@ import { FormInput } from '../interfaces/formInput';
 export class NuevoUsuarioComponent implements OnInit {
 
   constructor( private fb: FormBuilder) { }
+
+  @Output() onNuevoUsuario: EventEmitter<Usuario|null> = new EventEmitter();
   formularioUsuario: FormGroup | any;
 
   //Configuraciones de las entradas
@@ -26,7 +29,11 @@ export class NuevoUsuarioComponent implements OnInit {
       username: ['', [Validators.required, Validators.maxLength(10)]],
       email: ['', [Validators.required, Validators.email]],
       telefono: ['', [Validators.required, Validators.minLength(10)]],
-      sitioWeb: ''
+      sitioWeb: '',
+      calle: ['',Validators.required],
+      suite: ['', Validators.required],
+      ciudad: ['', Validators.required],
+      codigoPostal: ['', Validators.required]
     })
   }
 
@@ -39,4 +46,27 @@ export class NuevoUsuarioComponent implements OnInit {
     return configuracion;
   }
 
+  generarUsuario(){
+    if(this.formularioUsuario.status === 'VALID'){
+      let {calle, ciudad, codigoPostal, email, nombre, sitioWeb, suite, telefono, username} = this.formularioUsuario.value;
+      const objetoUsuario:Usuario = {
+        name: nombre,
+        username: username,
+        email: email,
+        phone: telefono,
+        website: sitioWeb,
+        address: {
+          street: calle,
+          suite: suite,
+          city: ciudad,
+          zipcode: codigoPostal
+        }
+      }
+      this.onNuevoUsuario.emit(objetoUsuario);
+    }
+  }
+
+  cancelarRegistro(){
+    this.onNuevoUsuario.emit(null);
+  }
 }

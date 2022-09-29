@@ -46,7 +46,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.onChange(this.currentValue);
 
     if( this.control ){
-      console.log(this.control)
       if(this.control.hasError('email'))
         this.textFormControl.setErrors({'email': true});
       if(this.control.hasError('maxlength'))
