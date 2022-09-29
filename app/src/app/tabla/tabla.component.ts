@@ -27,4 +27,5 @@ export class TablaComponent implements OnInit {
     return this.servicio.buscarUsername(userId);
   }
 
+
 }

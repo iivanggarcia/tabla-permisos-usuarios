@@ -10,7 +10,6 @@ export class DatosService {
   urlTareas : string = "https://jsonplaceholder.typicode.com/todos";
   usuarios : any;
   tareas : any;
-  cambio$ = new BehaviorSubject<string>("");
 
   constructor(private http: HttpClient) { }
 
