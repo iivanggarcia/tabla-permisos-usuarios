@@ -1,0 +1,22 @@
+<table> <!--*ngIf="permisos.usuario1 || permisos.usuario2 || permisos.usuario3"-->
+    <thead>
+        <tr class="table100-head">
+            <th class="column1">Id</th>
+            <th class="column2">Username</th>
+            <th class="column3">Name tarea</th>
+            <th class="column4">Checked</th>
+            <th class="column5" *ngIf="permisos.usuario3">Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarea of tareas">
+            <td class="column1">{{tarea.id}}</td>
+            <td class="column2">{{buscarNombre(tarea.userId)}}</td>
+            <td class="column3">{{tarea.title}}</td>
+            <td class="column4">
+                <mat-checkbox [checked]="tarea.completed" fxLayout="column" fxFlexAlign="center center"></mat-checkbox>
+            </td>
+            <th class="column5" *ngIf="permisos.usuario3">Borrar</th>
+        </tr>
+    </tbody>
+</table>
