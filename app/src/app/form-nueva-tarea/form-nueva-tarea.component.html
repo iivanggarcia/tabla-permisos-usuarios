@@ -1,0 +1,18 @@
+<form [formGroup]="formularioTarea">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre de Tarea</mat-label>
+        <input matInput placeholder="Tarea 1" value="Sushi" formControlName="title">
+        <mat-hint>Dale un nombre a tu tarea</mat-hint>
+        <mat-error *ngIf="formularioTarea.get('title')!.hasError('required')">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <select matNativeControl formControlName="userId">
+            <option value="" selected></option>
+            <option *ngFor="let item of usuarios" [value]="item.id">{{item.username}}</option>
+        </select>
+        <mat-hint>Selecciona al usuario a asignar la tarea</mat-hint>
+        <mat-error *ngIf="formularioTarea.get('userId')!.hasError('required')">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+</form>

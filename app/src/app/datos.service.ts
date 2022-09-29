@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, elementAt, map, Observable } from 'rxjs';
+import { Usuario } from './interfaces/usuarios';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,9 @@ export class DatosService {
   urlTareas : string = "https://jsonplaceholder.typicode.com/todos";
   usuarios : any;
   tareas : any;
+  nuevaTarea : any;
+
+  flag = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
@@ -31,4 +35,18 @@ export class DatosService {
     let nombreUsuario : string = this.usuarios.find((element: { id: any; }) => element.id == userId).username;
     return nombreUsuario;
   }
+
+  getUsuarios() : Usuario[] {
+    return this.usuarios;
+  }
+
+  getNuevaTarea( ) {
+    return this.nuevaTarea;
+  }
+
+  setNuevaTarea(tarea : any) {
+    this.nuevaTarea = tarea;
+    this.flag.next(true);
+  }
+  
 }

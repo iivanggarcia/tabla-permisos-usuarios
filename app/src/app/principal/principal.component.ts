@@ -16,6 +16,7 @@ export class PrincipalComponent implements OnInit {
     usuario3: false
   };
   banderaMostrar : boolean = false;
+  banderaNuevaTarea : boolean = true;
 
 
   constructor ( public dialog: MatDialog, private servicio : DatosService) { }
@@ -34,6 +35,8 @@ export class PrincipalComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.banderaMostrar = !this.banderaMostrar;
       this.usuario = result;
+      if ( this.usuario.usuario1 == true )
+        this.banderaNuevaTarea = false;
     });
   }
 }

@@ -1,3 +1,4 @@
 <div *ngIf="banderaMostrar" fxLayout="column" fxLayoutAlign="space-around center" >
+    <app-agregar-tabla *ngIf="banderaNuevaTarea == true" ></app-agregar-tabla>
     <app-tabla [permisos]="usuario" fxFlexAlign="center center"></app-tabla>
 </div>
