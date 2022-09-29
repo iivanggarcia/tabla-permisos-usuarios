@@ -14,9 +14,9 @@
             <td class="column2">{{buscarNombre(tarea.userId)}}</td>
             <td class="column3">{{tarea.title}}</td>
             <td class="column4">
-                <mat-checkbox [checked]="tarea.completed" fxLayout="column" fxFlexAlign="center center"></mat-checkbox>
+                <mat-checkbox [checked]="tarea.completed" fxLayout="column" fxFlexAlign="center center" disabled="{{permisoCheckbox}}"></mat-checkbox>
             </td>
-            <th class="column5" *ngIf="permisos.usuario3">Borrar</th>
+            <th class="column5" *ngIf="permisos.usuario3"></th>
         </tr>
     </tbody>
 </table>

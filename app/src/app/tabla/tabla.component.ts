@@ -15,17 +15,24 @@ export class TablaComponent implements OnInit {
   };
   tareas : any;
   usuarios : any;
+  permisoCheckbox : boolean = false;
 
   constructor(private servicio : DatosService) { }
 
   ngOnInit(): void {
-    this.tareas = this.servicio.tareas;
-    this.usuarios = this.servicio.usuarios;
+    this.inicializarArreglos();
+    this.inicializarPermisoCheckbox();
   }
 
   buscarNombre(userId : number){
     return this.servicio.buscarUsername(userId);
   }
 
-
+  inicializarArreglos(){
+    this.tareas = this.servicio.tareas;
+    this.usuarios = this.servicio.usuarios;
+  }
+  inicializarPermisoCheckbox(){
+    if(this.permisos.usuario1 == true) this.permisoCheckbox = true;
+  }
 }
