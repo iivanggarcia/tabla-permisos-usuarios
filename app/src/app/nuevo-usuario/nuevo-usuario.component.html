@@ -1,0 +1,24 @@
+<form [formGroup] = "formularioUsuario">
+    <div fxLayout="column" fxLayoutGap="10px">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <div fxLayout = "row" fxLayoutGap="10px">
+                <app-input [controlador]="'nombre'" [init]="getConfiguracionInput('Nombre','','text', true)" formControlName="nombre"></app-input>
+                <app-input [controlador]="'username'" [init]="getConfiguracionInput('Username','','text', true)" formControlName="username"></app-input>
+                <app-input [controlador]="'email'" [init]="getConfiguracionInput('Email','algo@gmail.com','email', true)" formControlName="email"></app-input>
+                <app-input [controlador]="'telefono'" [init]="getConfiguracionInput('Phone','','tel', true)" formControlName="telefono"></app-input>
+                <app-input [controlador]="'sitioWeb'" [init]="getConfiguracionInput('Sitio web','','text', false)" formControlName="sitioWeb"></app-input>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos de localización</legend>
+            <div fxLayout = "row">
+
+            </div>
+        </fieldset>
+        <div>
+            <button mat-raised-button color="primary">Guardar</button>
+            <button mat-raised-button color="warn">Cancelar</button>
+        </div>
+    </div>
+</form>

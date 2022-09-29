@@ -16,6 +16,7 @@ export class PrincipalComponent implements OnInit {
     usuario3: false
   };
   banderaMostrar : boolean = false;
+  mostrarFormularioUsuario: boolean = false;
 
 
   constructor ( public dialog: MatDialog, private servicio : DatosService) { }
@@ -35,5 +36,9 @@ export class PrincipalComponent implements OnInit {
       this.banderaMostrar = !this.banderaMostrar;
       this.usuario = result;
     });
+  }
+
+  abrirFormularioUsuario(){
+    this.mostrarFormularioUsuario = true;
   }
 }

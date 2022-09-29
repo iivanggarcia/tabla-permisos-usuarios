@@ -4,6 +4,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 
 @NgModule({
@@ -13,13 +17,17 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatDialogModule,
     MatRadioModule,
     FlexLayoutModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatButtonModule,
+    MatInputModule
   ],
   exports: [
     MatDialogModule,
     MatRadioModule,
     FlexLayoutModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatButtonModule,
+    MatInputModule
   ]
 })
 export class MaterialModule { }

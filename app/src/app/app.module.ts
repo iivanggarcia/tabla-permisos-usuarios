@@ -9,20 +9,27 @@ import { PrincipalComponent } from './principal/principal.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularioUsuariosComponent } from './formulario-usuarios/formulario-usuarios.component';
+import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
     TablaComponent,
-    FormularioUsuariosComponent
+    FormularioUsuariosComponent,
+    NuevoUsuarioComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
