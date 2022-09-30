@@ -1,0 +1,13 @@
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>{{init.label}}</mat-label>
+    <input matInput 
+    [formControl] = "textFormControl"
+    type="{{init.type}}" 
+    placeholder="{{init.placeholder}}"
+    [required]="init.required"
+    (keyup)="onCurrentValueChange($event)">
+    <mat-error *ngIf="textFormControl.hasError('required')">Este campo es requerido</mat-error> 
+    <mat-error *ngIf="textFormControl.hasError('email')">Ingresa un email valido</mat-error> 
+    <mat-error *ngIf="textFormControl.hasError('maxlength')">Se supero el largo requerido</mat-error> 
+    <mat-error *ngIf="textFormControl.hasError('minlength')">Ingresa un {{controlador}} valido</mat-error> 
+</mat-form-field>

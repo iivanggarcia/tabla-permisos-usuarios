@@ -16,7 +16,9 @@ import {MatInputModule} from '@angular/material/input';
     MatDialogModule,
     MatRadioModule,
     FlexLayoutModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatButtonModule,
+    MatInputModule
   ],
   exports: [
     MatDialogModule,

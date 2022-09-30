@@ -11,8 +11,12 @@ import { PrincipalComponent } from './principal/principal.component';
 import { TablaComponent } from './tabla/tabla.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormularioUsuariosComponent } from './formulario-usuarios/formulario-usuarios.component';
+import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputComponent } from './input/input.component';
 import { AgregarTablaComponent } from './agregar-tabla/agregar-tabla.component';
 import { FormNuevaTareaComponent } from './form-nueva-tarea/form-nueva-tarea.component';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +24,11 @@ import { FormNuevaTareaComponent } from './form-nueva-tarea/form-nueva-tarea.com
     PrincipalComponent,
     TablaComponent,
     FormularioUsuariosComponent,
+    NuevoUsuarioComponent,
+    InputComponent,
     AgregarTablaComponent,
     FormNuevaTareaComponent
+
   ],
   imports: [
     BrowserModule,
