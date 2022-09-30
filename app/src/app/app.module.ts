@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,9 @@ import { FormularioUsuariosComponent } from './formulario-usuarios/formulario-us
 import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './input/input.component';
+import { AgregarTablaComponent } from './agregar-tabla/agregar-tabla.component';
+import { FormNuevaTareaComponent } from './form-nueva-tarea/form-nueva-tarea.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +26,9 @@ import { InputComponent } from './input/input.component';
     FormularioUsuariosComponent,
     NuevoUsuarioComponent,
     InputComponent,
+    AgregarTablaComponent,
+    FormNuevaTareaComponent
+
   ],
   imports: [
     BrowserModule,

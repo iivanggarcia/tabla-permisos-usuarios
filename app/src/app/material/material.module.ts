@@ -4,10 +4,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -27,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
     FlexLayoutModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatIconModule,
     MatInputModule
   ]
 })

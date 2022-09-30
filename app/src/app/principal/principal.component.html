@@ -3,5 +3,6 @@
     <div fxLayout = "row" *ngIf = "usuario.usuario2">
         <button *ngIf = "!mostrarFormularioUsuario" mat-raised-button color="primary" (click)="abrirFormularioUsuario()">Agregar usuario</button>
     </div>
+    <app-agregar-tabla *ngIf="banderaNuevaTarea == true" ></app-agregar-tabla>
     <app-tabla [permisos]="usuario" fxFlexAlign="center center"></app-tabla>
 </div>
